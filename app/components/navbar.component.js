@@ -1,6 +1,5 @@
-// Navbar.js
-
 import Link from 'next/link';
+import { useNavigation } from 'next/navigation';  // Import useNavigation instead of useRouter
 import "../styles/components/navbar.styles.scss";
 
 const pages = [
@@ -9,26 +8,32 @@ const pages = [
   { id: 3, title: 'Events', path: '/events' },
   { id: 4, title: 'Vehicles', path: '/vehicles' },
   { id: 5, title: 'About us', path: '/about' },
-  { id: 2, title: 'Blog', path: '/contact' },
   // Add more page objects as needed
 ];
 
 const Navbar = () => {
+  const navigation = useNavigation();  // Use useNavigation instead of useRouter
+
   return (
     <nav className='navbar'>
-        <img 
+      <img 
         src=''
         className='logo'
-        />
+      />
       <ul>
         {pages.map((page) => (
           <li key={page.id}>
             <Link href={page.path}>
-              {page.title}
+              <a className={navigation.pathname === page.path ? 'active' : ''}>
+                {page.title}
+              </a>
             </Link>
           </li>
         ))}
       </ul>
+      <div className='left--sidenav'>
+        <p>icons</p>
+      </div>
     </nav>
   );
 };

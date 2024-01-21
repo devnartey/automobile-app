@@ -1,5 +1,8 @@
-:root{
-    $background-color: hsl(0, 0%, 11%);
-    $primary-text-color:hsl(0,0,100%);
-    $secondary-text-color:hsl(0,0%,50%);
-}
+// _colors.scss
+
+:root {
+    --background-color: hsl(0, 0%, 11%);
+    --primary-text-color: hsl(0, 0%, 100%);
+    --secondary-text-color: hsl(0, 0%, 50%);
+  }
+  

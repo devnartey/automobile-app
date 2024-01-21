@@ -1,3 +1,4 @@
+@use "./colors" as c;
 html{
     box-sizing: border-box;
     font-size: 100%;
@@ -5,10 +6,11 @@ html{
 *,*::before,*::after{
     box-sizing: inherit;
 }
-body{
-    margin: 0;
-    padding: 0;
-    font-family: u.$font;
-    background-color: var(--background-color);
-    color: var(--text-color); //css custom properties
+// boilerplate.scss
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
 }

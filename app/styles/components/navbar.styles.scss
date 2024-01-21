@@ -1,7 +1,48 @@
 // @use "../globals" as c;
 
-.navbar{
-    width: auto;
-    height: 10vh;
+// Styles for the navigation bar
+.navbar {
+    height: 20vh;
     background-color: black;
+    display: flex;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 80%; // Ensure full width
+        padding: 0; // Remove default padding
+        margin: 50% auto; // Remove default margin
+
+        li {
+            list-style-type: none;
+
+            // Styles for anchor elements inside list items
+            a {
+                color: white;
+                text-decoration: none;
+                position: relative; // Add position relative for positioning the loading line
+
+                &.active::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px; // Adjust as needed
+                    background-color: white;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                &:hover::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px; // Adjust as needed
+                    background-color: white;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
 }
